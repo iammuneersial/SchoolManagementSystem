@@ -1,0 +1,47 @@
+﻿<Page x:Class="CRUD_School_System.TeacherPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CRUD_School_System"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="TeacherPage" Width="842" Height="569">
+
+    <Grid>
+        <TabControl FontSize="16" FontWeight="Bold">
+            <TabControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF431BAE" Offset="0.018"/>
+                    <GradientStop Color="#FFFBCDCD" Offset="0.723"/>
+                </LinearGradientBrush>
+            </TabControl.Background>
+            <TabItem x:Name="ShowSalary" Header="Display Salary" Height="28" VerticalAlignment="Top" Background="#FFF1A2A2" Foreground="#FFF30606" Margin="-2,-2,-2,-4">
+                <StackPanel x:Name="DisplayingSalary" Margin="1,1,1,1" Background="Transparent" Width="840">
+                    <Label x:Name="label1" Content="Please Enter Your Employee ID" Height="36" Width="348" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" Margin="246,170,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox x:Name="takeEmpID" Height="36" Width="348" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" Margin="0,20,0,0" />
+                    <Button x:Name="enterEmpID" Content="Enter" Height="36" Width="348" Foreground="#FF0812F1" FontSize="20" FontWeight="Bold" Margin="0,20,0,0" Click="enterEmpID_Click" />
+                    <Label x:Name="Nothing" Content="Salary : " Background="Transparent" Foreground="Red" Height="38" Width="200" FontSize="20" FontWeight="Bold" Margin="-143,20,0,0"/>
+                    <Label x:Name="dispSalary" Height="38" Foreground="Red" FontSize="20" Width="148" FontWeight="Bold" Margin="444,-38,246,0" />
+                    <Button x:Name="GoToMain" Height="38" Foreground="Blue" Content="Go Back" FontSize="20" FontWeight="Bold" Margin="248,20,247,0" Click="GoToMain_Click"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="DisplayCourses" Header="View Courses" Height="28" VerticalAlignment="Top" Background="#FFF1A2A2" Foreground="#FFF30606" >
+                <StackPanel>
+                    <DataGrid x:Name="CourseView" Height="529" MouseDoubleClick="CourseView_MouseDoubleClick"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="SetGrades" Header="Set Grades" Height="28" VerticalAlignment="Top" Background="#FFF1A2A2" Foreground="#FFF30606" >
+                <StackPanel x:Name="ForGrades" Margin="1,1,1,1" Background="Transparent" Width="840" >
+                    <Label x:Name="labelg1" Content="Please Enter Student Reg ID :" Height="36" Width="348" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" Margin="246,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    <TextBox x:Name="getStRegID" Height="36" Width="348" Margin="0,15,0,0" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="labelg2" Content="Please Enter Course ID :" Height="36" Width="348" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" Margin="0,15,0,0" />
+                    <TextBox x:Name="getCourseID" Height="36" Width="348" Margin="0,15,0,0" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="labelg3" Content="Please Enter Course :" Height="36" Width="348" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" Margin="0,15,0,0" />
+                    <TextBox x:Name="getGrade" Height="36" Width="348" Margin="0,15,0,0" Foreground="#FFFFAC1C" FontSize="20" FontWeight="Bold" />
+                    <Button x:Name="AddGrade" Content="Add Grade" Height="36" Width="348" Margin="0,15,0,0" Foreground="Red" FontSize="20" FontWeight="Bold" Click="AddGrade_Click" />
+                </StackPanel>                
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

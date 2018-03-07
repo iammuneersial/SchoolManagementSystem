@@ -1,0 +1,92 @@
+﻿<Page x:Class="CRUD_School_System.AdministratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CRUD_School_System"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AdministratorPage" Width="842" Height="569">
+
+    <Grid>
+        <TabControl FontSize="16" FontWeight="Bold">
+            <TabControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF431BAE" Offset="0.018"/>
+                    <GradientStop Color="#FFFBCDCD" Offset="0.723"/>
+                </LinearGradientBrush>
+            </TabControl.Background>
+            <TabItem Name="teacher" Header="Add Teacher" Height="29" VerticalAlignment="Top" Background="#FFF1A2A2" Foreground="#FFF30606" Margin="-2">
+                <StackPanel x:Name="ForAddTeacher" Margin="1,1,1,1" Background="Transparent" Width="840">
+                    <TextBox x:Name="TeacherName" Height="38" Margin="450,140,42,0" Width="348" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="label1" Content="Teacher Name" Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="TeacherPassword" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="label2" Content="Teacher Password" Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="Salary" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="label3" Content="Teacher Salary" Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="EmployeeID" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="label4" Content="Empolyee ID" Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <Button x:Name="AddingTeacher" Height="38" Margin="450,50,42,0" Content="Add Teacher" FontSize="20" FontWeight="Bold" Foreground="#FF0812F1" Click="AddingTeacher_Click" />
+                    <Button x:Name="GoToMain" Height="38" Margin="185,-38,455,0" Content="Go Back" FontSize="20" FontWeight="Bold" Foreground="#FF0812F1" Click="GoToMain_Click"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Delete Teacher" Background="#FFF1A2A2" Foreground="#FFF30606" Height="32" VerticalAlignment="Top" Margin="-2,-2,-2,-1">
+                <StackPanel x:Name="ForRemoveTeacher" Margin="1,1,1,1" Background="Transparent" Width="840">
+                    <DataGrid Name="datagrid" Height="400" Margin="0,50,0,0" MouseDoubleClick="datagrid_MouseDoubleClick"/>
+                    <Label Content="Name :" Height="38" Width="120" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20" FontWeight="Bold" Margin="10,20,0,0"/>
+                    <TextBox Name="txt_name" Height="38" Width="250" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="150,-40,10,0"></TextBox>
+                    <Button Name="btn_Delete" Content="Delete" Height="38" Width="150" FontSize="25" FontWeight="Bold" HorizontalAlignment="Right" Margin = "0,-40,0,10" Click="btn_Delete_Click"></Button>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Add Student" Background="#FF6299F9" Foreground="#FFF30606">
+                <StackPanel x:Name="ForAddStudent" Margin="1,1,1,1" Background="Transparent" Width="840">
+                    <TextBox x:Name="StudentName" Height="38" Margin="450,140,42,0" Width="348" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="NameLabel" Content="Student Name" Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="StudentPassword" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="PasswordLabel" Content="Student Password" Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="Registration" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="RegLabel" Content="Registration No." Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="Batch" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="BatchLabel" Content="Batch" Height="38" Background="Transparent" Width="200" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <Button x:Name="AddStudent" Height="38" Margin="450,50,42,0" Content="Add Student" FontSize="20" FontWeight="Bold" Foreground="#FF0812F1" Click="AddStudent_Click" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Delete Student" Background="#FF6AA0FD" Foreground="#FFF30606">
+                <StackPanel x:Name="ForRemoveStudent" Margin="1,1,1,1" Background="Transparent" Width="840">
+                    <DataGrid Name="datagrid_For_Student" Height="400" Margin="0,50,0,0" MouseDoubleClick="datagrid_For_Student_MouseDoubleClick_1"/>
+                    <Label Content="Name :" Height="38" Width="120" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="20" FontWeight="Bold" Margin="10,20,0,0"/>
+                    <TextBox Name="txt_name_Student" Height="38" Width="250" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="150,-40,10,0"></TextBox>
+                    <Button Name="btn_Delete_Student" Content="Delete" Height="38" Width="150" FontSize="25" FontWeight="Bold" HorizontalAlignment="Right" Margin = "0,-40,0,10" Click="btn_Delete_Student_Click"></Button>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="AddsBatch" Header="Add Batches" Background="#FFFFF300" Foreground="#FFF30606">
+                <StackPanel x:Name="ForAddBatch" Margin="1,1,1,1" Background="Transparent" Width="840">
+                    <TextBox x:Name="BatchShort" Height="38" Margin="450,140,42,0" Width="348" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="BatchShort1" Content="Batch Name Like F13 :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="BatchLong" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="BatchLong1" Content="Batch Name Like SE Fall13 :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="BatchyearFor" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="LablelBatchYear" Content="Batch Year :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="BatchIDFor" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="LabelBatchID" Content="Batch ID Like SE-F13 :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <Button x:Name="AddingBatch" Height="38" Margin="450,50,42,0" Content="Add Batch" FontSize="20" FontWeight="Bold" Foreground="#FF0812F1" Click="AddingBatch_Click" />
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="AddCourse" Header="Add Courses" Background="#FFFFF300" Foreground="#FFF30606">
+                <StackPanel x:Name="ForAdditionOFCourse" Margin="1,1,1,1" Background="Transparent" Width="840">
+                    <TextBox x:Name="CourseNameFor" Height="38" Margin="450,140,42,0" Width="348" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="Coursenamin1" Content="Course Name :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="CourseIDsFor" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="LabelCrsID" Content="Course ID :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="EmpIDfor" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="LablelEmplID" Content="EmplID for this course :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <TextBox x:Name="BatchIDofCourse" Height="38" Margin="450,20,42,0" FontSize="20" FontWeight="Bold" />
+                    <Label x:Name="LabelBatchIDforcourse" Content="Batch ID For Course :" Height="38" Background="Transparent" Width="300" Margin="60,-38,330,0" FontSize="20" FontWeight="Bold" Foreground="#FFFFAC1C"/>
+                    <Button x:Name="AddingCourse" Height="38" Margin="450,50,42,0" Content="Add Course" FontSize="20" FontWeight="Bold" Foreground="#FF0812F1" Click="AddingCourse_Click"/>
+                </StackPanel>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Page>
